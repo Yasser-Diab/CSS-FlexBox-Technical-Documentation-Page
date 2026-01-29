@@ -375,7 +375,7 @@ code {
         line-height: 2;
         margin-left: 18.7em;
         margin-top: 0;
-        margin-bottom: 3em;
+        margin-bottom: 2vw;
     }
 
     #main-doc {
@@ -388,9 +388,7 @@ code {
     #navbar>header {
         font-size: 1.4em;
         height: auto;
-        margin-left: 0;
-        vertical-align: middle;
-        text-align: left;
+        text-align: center;
     }
 
     /* Navigation Bar Styles */
