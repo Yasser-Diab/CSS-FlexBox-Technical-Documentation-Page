@@ -369,7 +369,9 @@ code {
 
 @media (min-width: 1025px),
 (orientation: landscape) {
-
+    html {
+        scroll-padding-top: unset;
+    }
 
     body {
         line-height: 2;
