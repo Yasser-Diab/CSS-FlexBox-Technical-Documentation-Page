@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSS Flexbox Documentation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <main id="main-doc">
+
+        <!-- ============ Navigation Bar =============  -->
+
+
+
+        <nav id="navbar">
+
+            <!--  Header  -->
+            <header>
+                <h1>CSS Flexbox</h1>
+            </header>
+
+
+            <!-- ================= Navigation links ================= -->
+
+            <ul>
+                <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+                <li><a class="nav-link" href="#What_Is_Flexbox?">What is Flexbox?</a></li>
+                <li><a class="nav-link" href="#Basic_Concepts_of_Flexbox">Basic Concepts of Flexbox</a></li>
+                <li><a class="nav-link" href="#Flex_Container">Flex Container</a></li>
+                <li><a class="nav-link" href="#Flex_Items">Flex Items</a></li>
+                <li><a class="nav-link" href="#Main_Axis_vs._Cross_Axis">Main Axis vs. Cross Axis</a></li>
+                <li><a class="nav-link" href="#Common_Flexbox_Properties">Common Flexbox Properties</a></li>
+                <li><a class="nav-link" href="#Flexbox_Example">Flexbox Example</a></li>
+                <li><a class="nav-link" href="#Browser_Support">Browser Support</a></li>
+                <li><a class="nav-link" href="#Reference">Reference</a></li>
+            </ul>
+
+
+        </nav>
+
+        <!-- ================= Content ================= -->
+
+        <section class="notes">
+            <p>Note:<br>This content is freely usable and adapted from <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank">MDN
+                    Web Docs — CSS
+                    Flexible Box Layout</a>, licensed under <a href="https://creativecommons.org/licenses/by-sa/2.5/"
+                    target="_blank">CC
+                    BY-SA 2.5</a>.</p>
+        </section>
+
+        <!-- ========== Introduction Section ========== -->
+
+
+        <section class="main-section" id="Introduction">
+            <header>
+                <h2>Introduction</h2>
+            </header>
+            <p>The CSS Flexible Box Layout Module, commonly known as Flexbox, is a layout model that allows elements
+                within a container to be automatically arranged depending on screen size or available space.
+
+                Flexbox was designed to make it easier to build flexible and responsive layouts without relying on
+                floats or positioning.<br>It enables dynamic resizing and distribution of space among items, even when
+                their size is unknown or changes dynamically.</p>
+        </section>
+
+        <!-- ========== What is Flexbox Section ========== -->
+
+
+        <section class="main-section" id="What_Is_Flexbox?">
+            <header>
+                <h2>What Is Flexbox?</h2>
+            </header>
+            <p>Flexbox is a one-dimensional layout model — meaning it deals with either a row or a column at a time, but
+                not both simultaneously. It helps align and distribute items within a container along a single
+                axis.<br>Unlike traditional layout methods, Flexbox can handle variable sizes of content gracefully and
+                adapt to the available space.
+            </p>
+        </section>
+
+        <!-- ========== Basic Concepts Section ========== -->
+
+
+        <section class="main-section" id="Basic_Concepts_of_Flexbox">
+            <header>
+                <h2>Basic Concepts of Flexbox</h2>
+            </header>
+            <p>A Flexbox layout consists of two key parts:</p>
+            <ol type="I">
+                <li>The flex container, which defines the area for flex items.</li>
+                <li>The flex items, which are the direct children of the container.</li>
+            </ol>
+            <p>Once an element is declared as a flex container, its direct children automatically become flex items and
+                gain flexible positioning and sizing behavior.</p>
+        </section>
+
+        <!-- ========== Flex Container Section ========== -->
+
+
+
+        <section class="main-section" id="Flex_Container">
+            <header>
+                <h2>Flex Container</h2>
+            </header>
+            <p>
+                To create a flex container, set the container’s
+                <span class="para-code">display</span> property to
+                <span class="para-code">flex</span> or
+                <span class="para-code">inline-flex</span>:
+            </p>
+
+            <pre><code><span class="code-selector">.container</span> {
+  <span class="code-property">display</span>: <span class="code-value">flex</span>;
+}
+</code></pre>
+
+            <p>The container then defines a main axis (horizontal by default) and a cross axis (vertical by default).
+                Items inside the container can be aligned and ordered along these axes using Flexbox properties.</p>
+        </section>
+
+        <!-- ========== Flex Items Section ========== -->
+
+
+        <section class="main-section" id="Flex_Items">
+            <header>
+                <h2>Flex Items</h2>
+            </header>
+            <p>Flex items are the direct children of a flex container. These items can be controlled using various
+                properties such as:</p>
+            <ul>
+                <li><span class="para-code">flex-grow</span></li>
+                <li><span class="para-code">flex-shrink</span></li>
+                <li><span class="para-code">flex-basis</span></li>
+                <li><span class="para-code">align-self</span></li>
+                <li><span class="para-code">order</span></li>
+
+            </ul>
+            <p>Each property allows you to define how the item behaves relative to the rest of the flex items.</p>
+        </section>
+
+        <!-- ========== Main Axis vs Cross Axis Section ========== -->
+        <section class="main-section" id="Main_Axis_vs._Cross_Axis">
+            <header>
+                <h2>Main Axis vs. Cross Axis</h2>
+            </header>
+            <p>The main axis is the primary direction in which the flex items are laid out. The cross axis is
+                perpendicular to it.</p>
+            <ul>
+                <li>When <span class="para-code">flex-direction</span> is <span class="para-code">row</span>, the main
+                    axis runs horizontally and the cross axis vertically.</li>
+                <li>When <span class="para-code">flex-direction</span> is <span class="para-code">column</span>, the
+                    main axis runs vertically and the cross axis horizontally.</li>
+            </ul>
+            <p>This relationship is key to understanding how Flexbox aligns items.</p>
+        </section>
+
+        <!-- ========== Common Properties Section ========== -->
+
+        <section class="main-section" id="Common_Flexbox_Properties">
+
+            <header>
+                <h2>Common Flexbox Properties</h2>
+            </header>
+
+            <!-- ---- display property ---- -->
+
+            <section class="sub-section" id="display">
+                <h3><span class="para-code">display</span></h3>
+                <p>Defines a flex container:</p>
+
+                <pre><code><span class="code-selector">.container</span> {
+  <span class="code-property">display</span>: <span class="code-value">flex</span>;
+}
+</code></pre>
+            </section>
+
+
+            <!-- ---- flex-direction property ---- -->
+            <section class="sub-section" id="flex-direction">
+                <h3><span class="para-code">flex-direction</span></h3>
+                <p>Defines the direction of the main axis — row or column:</p>
+
+                <pre><code><span class="code-selector">.container</span> {
+  <span class="code-property">flex-direction</span>: <span class="code-value">row</span>;
+  <span class="code-comment">/* column |
+  row-reverse | column-reverse */</span>
+}
+</code></pre>
+            </section>
+
+
+            <!-- ---- justify-content property ---- -->
+            <section class="sub-section" id="justify-content">
+                <h3><span class="para-code">justify-content</span></h3>
+                <p>Aligns items along the main axis:</p>
+
+                <pre><code><span class="code-selector">.container</span> {
+  <span class="code-property">justify-content</span>: <span class="code-value">center</span>;
+  <span class="code-comment">/* flex-start | flex-end |
+  space-between | space-around | space-evenly */</span>
+}
+</code></pre>
+            </section>
+
+            <!-- ---- align-items property ---- -->
+            <section class="sub-section" id="align-items">
+                <h3><span class="para-code">align-items</span></h3>
+                <p>Aligns items along the cross axis:</p>
+
+                <pre><code><span class="code-selector">.container</span> {
+  <span class="code-property">align-items</span>: <span class="code-value">center</span>;
+  <span class="code-comment">/* flex-start | flex-end |
+  baseline |stretch */</span>
+}
+</code></pre>
+            </section>
+
+
+            <!-- ---- flex-wrap property ---- -->
+            <section class="sub-section" id="flex-wrap">
+                <h3><span class="para-code">flex-wrap</span></h3>
+                <p>Allows items to wrap onto multiple lines if needed:</p>
+
+                <pre><code><span class="code-selector">.container</span> {
+  <span class="code-property">flex-wrap</span>: <span class="code-value">wrap</span>;
+  <span class="code-comment">/* nowrap | wrap-reverse */</span>
+}
+</code></pre>
+            </section>
+
+        </section>
+
+        <!-- ========== Flexbox Example Section ========== -->
+
+
+        <section class="main-section" id="Flexbox_Example">
+            <header>
+                <h2>Flexbox Example</h2>
+            </header>
+            <p>Example of a simple Flexbox container:</p>
+
+            <pre><code>&lt;<span class="code-selector">div</span> <span class="code-property">class</span>=<span class="code-value">"container"</span>&gt;
+  &lt;<span class="code-selector">div</span> <span class="code-property">class</span>=<span class="code-value">"item"</span>&gt;1&lt;/<span class="code-selector">div</span>&gt;
+  &lt;<span class="code-selector">div</span> <span class="code-property">class</span>=<span class="code-value">"item"</span>&gt;2&lt;/<span class="code-selector">div</span>&gt;
+  &lt;<span class="code-selector">div</span> <span class="code-property">class</span>=<span class="code-value">"item"</span>&gt;3&lt;/<span class="code-selector">div</span>&gt;
+&lt;/<span class="code-selector">div</span>&gt;
+</code></pre>
+
+            <pre><code><span class="code-selector">.container</span> {
+  <span class="code-property">display</span>: <span class="code-value">flex</span>;
+  <span class="code-property">justify-content</span>: <span class="code-value">space-around</span>;
+  <span class="code-property">align-items</span>: <span class="code-value">center</span>;
+  <span class="code-property">height</span>: <span class="code-value">200px</span>;
+  <span class="code-property">background-color</span>: <span class="code-value">#e0f7fa</span>;
+}
+
+<span class="code-selector">.item</span> {
+  <span class="code-property">background-color</span>: <span class="code-value">#00796b</span>;
+  <span class="code-property">color</span>: <span class="code-value">white</span>;
+  <span class="code-property">padding</span>: <span class="code-value">20px</span>;
+  <span class="code-property">border-radius</span>: <span class="code-value">5px</span>;
+}
+</code></pre>
+        </section>
+
+
+        <!-- ========== Browser Support Section ========== -->
+
+        <section class="main-section" id="Browser_Support">
+            <header>
+                <h2>Browser Support</h2>
+            </header>
+            <p>Flexbox is widely supported across all modern browsers, including Chrome, Edge, Firefox, and Safari.
+                Older browsers may require vendor prefixes (e.g., <span class="para-code">-webkit-</span>), but these
+                are rarely necessary today.</p>
+        </section>
+
+        <!-- ========== Reference Section ========== -->
+
+
+        <section class="main-section" id="Reference">
+            <header>
+                <h2>Reference</h2>
+            </header>
+            <p>
+                Content references and examples are adapted from
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank">
+                    MDN Web Docs — CSS Flexible Box Layout
+                </a>,
+                licensed under the
+                <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank">
+                    Creative Commons Attribution-ShareAlike 2.5 License (CC BY-SA 2.5)
+                </a>.
+            </p>
+        </section>
+
+
+    </main>
+    <footer class="page-footer">
+        <div class="footer-links">
+            <p>
+                © 2026 <strong>Yasser Diab</strong>
+            </p>
+            <p>
+
+                <a href="https://github.com/Yasser-Diab" target="_blank">GitHub</a>
+                |
+                <a href="https://yasser-diab.github.io/profile-page/" target="_blank">Portfolio</a>
+            </p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
