@@ -91,4 +91,4 @@ https://creativecommons.org/licenses/by-sa/2.5/
 
 ##  Live Demo
  
-https://yasser-diab.github.io/Flex-Box-Technical-Documentation-Page/
+https://yasser-diab.github.io/CSS-FlexBox-Technical-Documentation-Page/
